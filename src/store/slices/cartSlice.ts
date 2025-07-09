@@ -117,10 +117,7 @@ export const selectCartTotalAmount = (state: { cart: CartState }) =>
   state.cart.totalAmount;
 
 export const selectIsInCart = createSelector(
-  [
-    selectCartItems,
-    (state: { cart: CartState }, productId: string) => productId,
-  ],
+  [selectCartItems, (_: { cart: CartState }, productId: string) => productId],
   (items, productId) => items.some((item) => item.id === productId)
 );
 

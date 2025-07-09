@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, forwardRef, ReactNode } from "react";
+import { InputHTMLAttributes, forwardRef, ReactNode } from "react";
 import { useSelector } from "react-redux";
 
 interface ThemeState {

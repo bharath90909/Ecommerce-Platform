@@ -9,7 +9,7 @@ import { ROUTES } from "../../../utils/constants";
 import Button from "../../../components/ui/Button";
 import Card from "../../../components/ui/Card";
 import LoadingSpinner from "../../../components/ui/LoadingSpinner";
-import { toast } from "react-toastify";
+
 import { Product } from "../../../types";
 
 interface ThemeState {
@@ -37,7 +37,7 @@ const DashboardTab: React.FC = memo(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const handleDeleteProduct = async (id: string, title: string) => {
+  const handleDeleteProduct = async (id: string) => {
     try {
       await dispatch(deleteProduct(id)).unwrap();
     } catch (error) {
@@ -183,9 +183,7 @@ const DashboardTab: React.FC = memo(() => {
                   <Button
                     variant="outline"
                     size="small"
-                    onClick={() =>
-                      handleDeleteProduct(product.id, product.title)
-                    }
+                    onClick={() => handleDeleteProduct(product.id)}
                     className="text-red-600 hover:text-red-700 border-red-300 hover:border-red-400"
                   >
                     Delete

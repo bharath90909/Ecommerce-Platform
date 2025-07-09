@@ -104,7 +104,7 @@ const CartPage: React.FC = memo(() => {
   const { items, totalItems, totalAmount } = useSelector(
     (state: RootState) => state.cart
   );
-  const { mode } = useSelector((state: RootState) => state.theme);
+
 
   const handleRemoveFromCart = useCallback(
     (id: string) => {
